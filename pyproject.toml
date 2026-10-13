@@ -1,0 +1,28 @@
+[project]
+name = "primitive-db"
+version = "1.0.0"
+description = "Учебная консольная база данных: JSON, CRUD, декораторы и замыкания"
+readme = "README.md"
+authors = [{name = "Семёшин, М26-555"}]
+requires-python = ">=3.12"
+dependencies = ["prettytable>=3.12,<4", "prompt>=0.4.1,<0.5"]
+
+[project.scripts]
+database = "primitive_db.main:main"
+
+[build-system]
+requires = ["uv_build>=0.8,<0.9"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = ["ruff>=0.9,<1", "pytest>=8,<9"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
